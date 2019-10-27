@@ -1,6 +1,13 @@
-# LiangshanXingyizhan
+<!--
+ * @Description: TODO 
+ * @Author: zb
+ * @Date: 2019-10-28 00:22:42
+ * @LastEditors: zb
+ * @LastEditTime: 2019-10-28 00:25:26
+ -->
+# Management-template
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.5.
+一个基于Angular 6.25的后台管理系统模板
 
 ## Development server
 

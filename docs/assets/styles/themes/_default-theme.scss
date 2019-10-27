@@ -1,0 +1,45 @@
+.#{$prefix}-header {
+  background-color: $header-bg;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  .item {
+    color: #fff !important;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+  }
+}
+
+
+.#{$prefix}-asider {
+  box-shadow: 1px 0 10px rgba(0, 0, 0, 0.2);
+  background-color: map_get($colors, grey-1); // background-color: $aside-bg;
+  color: map_get($colors, black);
+  .#{$prefix}-nav{
+    color: map_get($colors, white-1);
+    &-item, li{
+      &-label {
+        color: map_get($colors, white-1);
+        border-right:solid 3px  rgba(0, 0, 0, 0);
+        a{
+          color: map_get($colors, white-1);
+        }
+        &:hover{
+          a {
+            color: get-color(blue) !important;                
+          }
+        }
+      }
+      color: map_get($colors, white-1);  
+      &-selected {
+        >.#{$prefix}-nav-item-label {              
+            >a {
+              color: get-color(blue) !important;                 
+            }
+          background-color: #e6f7ff;
+          border-right: 3px solid #1890ff;
+        }
+      }        
+
+    }
+  }
+}
