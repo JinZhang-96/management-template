@@ -1,3 +1,10 @@
+/*
+ * @Description: TODO 
+ * @Author: zb
+ * @Date: 2019-10-28 00:22:42
+ * @LastEditors: zb
+ * @LastEditTime: 2019-10-28 17:48:16
+ */
 import {Component, OnInit} from '@angular/core';
 
 import {LayoutService} from '../layout/layout.service';
@@ -27,12 +34,14 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.sideSev.Menus.subscribe(next => {
-    //   this.menus = toTreeData(next['data']['menus'], this.attr);
-    //   console.log(this.menus)
-    // }, error => {
-    //   console.log(error);
-    // });
+    this.sideSev.Menus.subscribe(next => {
+
+      this.menus = next
+      // this.menus = toTreeData(next['data']['menus'], this.attr);
+      console.log(this.menus)
+    }, error => {
+      console.log(error);
+    });
 
   }
 

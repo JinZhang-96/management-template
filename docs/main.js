@@ -466,20 +466,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var ng_zorro_antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ng-zorro-antd */ "./node_modules/ng-zorro-antd/fesm5/ng-zorro-antd.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_common_locales_zh__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/locales/zh */ "./node_modules/@angular/common/locales/zh.js");
-/* harmony import */ var _angular_common_locales_zh__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_angular_common_locales_zh__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _layout_layout_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @layout/layout.module */ "./src/app/layout/layout.module.ts");
-/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shared/shared.module */ "./src/app/shared/shared.module.ts");
-/* harmony import */ var _core_core_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @core/core.module */ "./src/app/core/core.module.ts");
+/* harmony import */ var _ant_design_icons_angular_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ant-design/icons-angular/icons */ "./node_modules/@ant-design/icons-angular/fesm5/ant-design-icons-angular-icons.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_common_locales_zh__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/locales/zh */ "./node_modules/@angular/common/locales/zh.js");
+/* harmony import */ var _angular_common_locales_zh__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_angular_common_locales_zh__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _layout_layout_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @layout/layout.module */ "./src/app/layout/layout.module.ts");
+/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @shared/shared.module */ "./src/app/shared/shared.module.ts");
+/* harmony import */ var _core_core_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @core/core.module */ "./src/app/core/core.module.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+/*
+ * @Description: TODO
+ * @Author: zb
+ * @Date: 2019-10-28 00:22:42
+ * @LastEditors: zb
+ * @LastEditTime: 2019-10-28 15:49:58
+ */
+
 
 
 
@@ -487,7 +496,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 /** 配置 angular i18n **/
 
 
-Object(_angular_common__WEBPACK_IMPORTED_MODULE_3__["registerLocaleData"])(_angular_common_locales_zh__WEBPACK_IMPORTED_MODULE_4___default.a);
+Object(_angular_common__WEBPACK_IMPORTED_MODULE_4__["registerLocaleData"])(_angular_common_locales_zh__WEBPACK_IMPORTED_MODULE_5___default.a);
 
 
 /**
@@ -496,27 +505,30 @@ Object(_angular_common__WEBPACK_IMPORTED_MODULE_3__["registerLocaleData"])(_angu
 
 
 
+var icons = [_ant_design_icons_angular_icons__WEBPACK_IMPORTED_MODULE_3__["MenuFoldOutline"], _ant_design_icons_angular_icons__WEBPACK_IMPORTED_MODULE_3__["LockOutline"], _ant_design_icons_angular_icons__WEBPACK_IMPORTED_MODULE_3__["SettingOutline"]];
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                _layout_layout_module__WEBPACK_IMPORTED_MODULE_7__["LayoutModule"],
-                _shared_shared_module__WEBPACK_IMPORTED_MODULE_8__["SharedModule"].forRoot(),
-                _core_core_module__WEBPACK_IMPORTED_MODULE_9__["CoreModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"]
+                ng_zorro_antd__WEBPACK_IMPORTED_MODULE_2__["NzIconModule"],
+                _layout_layout_module__WEBPACK_IMPORTED_MODULE_8__["LayoutModule"],
+                _shared_shared_module__WEBPACK_IMPORTED_MODULE_9__["SharedModule"].forRoot(),
+                _core_core_module__WEBPACK_IMPORTED_MODULE_10__["CoreModule"],
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"]
             ],
             providers: [
                 { provide: ng_zorro_antd__WEBPACK_IMPORTED_MODULE_2__["NZ_I18N"], useValue: ng_zorro_antd__WEBPACK_IMPORTED_MODULE_2__["zh_CN"] },
-                { provide: _core_core_module__WEBPACK_IMPORTED_MODULE_9__["HTTP_PREFIX"], useValue: '' },
-                { provide: _core_core_module__WEBPACK_IMPORTED_MODULE_9__["SERVE_IP"], useValue: 'http://127.0.0.1:8080/' }
+                { provide: _core_core_module__WEBPACK_IMPORTED_MODULE_10__["HTTP_PREFIX"], useValue: '' },
+                { provide: _core_core_module__WEBPACK_IMPORTED_MODULE_10__["SERVE_IP"], useValue: 'http://127.0.0.1:8080/' },
+                { provide: ng_zorro_antd__WEBPACK_IMPORTED_MODULE_2__["NZ_ICONS"], useValue: icons }
             ],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -1031,7 +1043,7 @@ var ContentComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"xyz-header-logo\">\r\n  <a [routerLink]=\"['/']\" class=\"xyz-logo-link\">\r\n    <strong>\r\n       张贝后台模板\r\n    </strong>\r\n    <!--<img class=\"alain-default__header-logo-expanded\" src=\"./assets/logo-full.svg\" alt=\"{{settings.app.name}}\" style=\"max-height:40px;\" />-->\r\n    <!--<img class=\"alain-default__header-logo-collapsed\" src=\"./assets/logo.svg\" alt=\"{{settings.app.name}}\" style=\"max-height:30px;\" />-->\r\n  </a>\r\n</div>\r\n<div class=\"xyz-top-nav-wrap\">\r\n  <ul class=\"xyz-top-nav\">\r\n    <!-- Menu -->\r\n    <li>\r\n      <div class=\"item\" >\r\n        <i class=\"anticon anticon-menu-fold\"></i>\r\n      </div>\r\n    </li>\r\n    <li class=\"hidden-xs\">\r\n      <div class=\"item\" [routerLink]=\"['/lock']\">\r\n        <i class=\"anticon anticon-lock\"></i>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n\r\n  <ul class=\"xyz-top-nav\">\r\n    <!-- Menu -->\r\n    <!--<li>-->\r\n      <!--<div class=\"item\" >-->\r\n        <!--<i class=\"anticon anticon-menu-unfold\"></i>-->\r\n      <!--</div>-->\r\n    <!--</li>-->\r\n    <!--<li class=\"hidden-xs\">-->\r\n      <!--<div class=\"item\" [routerLink]=\"['/lock']\">-->\r\n        <!--<i class=\"anticon anticon-lock\"></i>-->\r\n      <!--</div>-->\r\n    <!--</li>-->\r\n  </ul>\r\n</div>\r\n"
+module.exports = "<!--\r\n * @Description: TODO \r\n * @Author: zb\r\n * @Date: 2019-10-28 00:22:42\r\n * @LastEditors: zb\r\n * @LastEditTime: 2019-10-28 19:26:41\r\n -->\r\n<div class=\"xyz-header-logo\">\r\n  <a [routerLink]=\"['/']\" class=\"xyz-logo-link\">\r\n    <strong>\r\n      张贝后台模板\r\n    </strong>\r\n    <!--<img class=\"alain-default__header-logo-expanded\" src=\"./assets/logo-full.svg\" alt=\"{{settings.app.name}}\" style=\"max-height:40px;\" />-->\r\n    <!--<img class=\"alain-default__header-logo-collapsed\" src=\"./assets/logo.svg\" alt=\"{{settings.app.name}}\" style=\"max-height:30px;\" />-->\r\n  </a>\r\n</div>\r\n<div class=\"xyz-top-nav-wrap\">\r\n  <ul class=\"xyz-top-nav\">\r\n    <!-- Menu -->\r\n    <li>\r\n      <div class=\"item\">\r\n        <i class=\"anticon anticon-menu-fold\"></i>\r\n      </div>\r\n    </li>\r\n    <li class=\"hidden-xs\">\r\n      <div class=\"item\" [routerLink]=\"['/lock']\">\r\n        <i class=\"anticon anticon-lock\"></i>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n\r\n  <ul class=\"xyz-top-nav\">\r\n    <li class=\"hidden-xs\">\r\n      <div class=\"item\">\r\n        <i class=\"anticon anticon-setting\"></i>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1104,14 +1116,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layout_layout_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./layout/layout.component */ "./src/app/layout/layout/layout.component.ts");
 /* harmony import */ var _breadcrumb_breadcrumb_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./breadcrumb/breadcrumb.component */ "./src/app/layout/breadcrumb/breadcrumb.component.ts");
 /* harmony import */ var _content_content_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./content/content.component */ "./src/app/layout/content/content.component.ts");
-/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shared/shared.module */ "./src/app/shared/shared.module.ts");
-/* harmony import */ var _sidebar_nav_nav_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./sidebar/nav/nav.component */ "./src/app/layout/sidebar/nav/nav.component.ts");
+/* harmony import */ var _sidebar_nav_nav_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./sidebar/nav/nav.component */ "./src/app/layout/sidebar/nav/nav.component.ts");
+/* harmony import */ var _sidebar_nav_sub_nav_sub_nav_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./sidebar/nav/sub-nav/sub-nav.component */ "./src/app/layout/sidebar/nav/sub-nav/sub-nav.component.ts");
+/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @shared/shared.module */ "./src/app/shared/shared.module.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+/*
+ * @Description: TODO
+ * @Author: zb
+ * @Date: 2019-10-28 00:22:42
+ * @LastEditors: zb
+ * @LastEditTime: 2019-10-28 19:51:27
+ */
+
+
 
 
 
@@ -1121,17 +1143,16 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 /**          自定义模块  */
 
-
 var LayoutModule = /** @class */ (function () {
     function LayoutModule() {
     }
     LayoutModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             imports: [
-                _shared_shared_module__WEBPACK_IMPORTED_MODULE_7__["SharedModule"],
+                _shared_shared_module__WEBPACK_IMPORTED_MODULE_9__["SharedModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]
             ],
-            declarations: [_header_header_component__WEBPACK_IMPORTED_MODULE_2__["HeaderComponent"], _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_3__["SidebarComponent"], _layout_layout_component__WEBPACK_IMPORTED_MODULE_4__["LayoutComponent"], _breadcrumb_breadcrumb_component__WEBPACK_IMPORTED_MODULE_5__["BreadcrumbComponent"], _content_content_component__WEBPACK_IMPORTED_MODULE_6__["ContentComponent"], _sidebar_nav_nav_component__WEBPACK_IMPORTED_MODULE_8__["NavComponent"]]
+            declarations: [_header_header_component__WEBPACK_IMPORTED_MODULE_2__["HeaderComponent"], _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_3__["SidebarComponent"], _layout_layout_component__WEBPACK_IMPORTED_MODULE_4__["LayoutComponent"], _breadcrumb_breadcrumb_component__WEBPACK_IMPORTED_MODULE_5__["BreadcrumbComponent"], _content_content_component__WEBPACK_IMPORTED_MODULE_6__["ContentComponent"], _sidebar_nav_nav_component__WEBPACK_IMPORTED_MODULE_7__["NavComponent"], _sidebar_nav_sub_nav_sub_nav_component__WEBPACK_IMPORTED_MODULE_8__["SubNavComponent"]]
         })
     ], LayoutModule);
     return LayoutModule;
@@ -1282,7 +1303,7 @@ var LayoutService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--\r\n * @Description: TODO \r\n * @Author: zb\r\n * @Date: 2018-11-17 20:45:04\r\n * @LastEditors: zb\r\n * @LastEditTime: 2019-10-27 23:20:31\r\n -->\r\n<ul class=\"xyz-nav\">\r\n  <li class=\"xyz-nav-item xyz-nav-item-close   xyz-nav-item-dept\">\r\n    <div class=\"xyz-nav-item-label\"><a>系统管理</a></div>\r\n    <ul class=\"xyz-child-nav\">\r\n      <li class=\"xyz-nav-item  xyz-nav-item-dept-1\"><div class=\"xyz-nav-item-label\"><a>菜单管理</a></div></li>\r\n      <li class=\"xyz-nav-item  xyz-nav-item-dept-1 xyz-nav-item-close\">\r\n        <div class=\"xyz-nav-item-label\"><a>权限管理</a></div>\r\n        <ul class=\"xyz-child-nav\">\r\n            <li class=\"xyz-nav-item  xyz-nav-item-dept-2\"><div class=\"xyz-nav-item-label\"><a>权限添加</a></div></li>\r\n        </ul>\r\n      </li>\r\n    </ul>\r\n  </li>\r\n  <li class=\"xyz-nav-item   xyz-nav-item-dept\"> <div class=\"xyz-nav-item-label\"><a>链接管理</a></div></li>\r\n  <li class=\"xyz-nav-item   xyz-nav-item-dept\"> <div class=\"xyz-nav-item-label\"><a>风格管理</a></div></li>\r\n  <li class=\"xyz-nav-item   xyz-nav-item-dept\"> <div class=\"xyz-nav-item-label\"><a>字典管理</a></div></li>\r\n  <li class=\"xyz-nav-item   xyz-nav-item-dept\"> <div class=\"xyz-nav-item-label\"><a>组件管理</a></div> </li>\r\n</ul>\r\n"
+module.exports = "<!--\r\n * @Description: TODO \r\n * @Author: zb\r\n * @Date: 2018-11-17 20:45:04\r\n * @LastEditors: zb\r\n * @LastEditTime: 2019-10-28 21:05:47\r\n -->\r\n<ul class=\"xyz-nav\">\r\n  <ng-container *ngFor=\"let menu of menus\">\r\n      <li class=\"xyz-nav-item   xyz-nav-item-dept-0\" [class.xyz-nav-item-close]=\"menu.children && menu.children.length > 0\">\r\n         <div class=\"xyz-nav-item-label\"><a>{{menu.text}}</a></div>\r\n         <xyz-sub-nav *ngIf=\"menu.children && menu.children.length > 0\" [level]=\"1\" [menus]=\"menu.children\"></xyz-sub-nav>         \r\n      </li>\r\n  </ng-container>\r\n  <!-- <li class=\"xyz-nav-item xyz-nav-item-close   xyz-nav-item-dept\">\r\n    <div class=\"xyz-nav-item-label\"><a>系统管理</a></div>\r\n    <ul class=\"xyz-child-nav\">\r\n      <li class=\"xyz-nav-item  xyz-nav-item-dept-1\"><div class=\"xyz-nav-item-label\"><a>菜单管理</a></div></li>\r\n      <li class=\"xyz-nav-item  xyz-nav-item-dept-1 xyz-nav-item-close\">\r\n        <div class=\"xyz-nav-item-label\"><a>权限管理</a></div>\r\n        <ul class=\"xyz-child-nav\">\r\n            <li class=\"xyz-nav-item  xyz-nav-item-dept-2\"><div class=\"xyz-nav-item-label\"><a>权限添加</a></div></li>\r\n        </ul>\r\n      </li>\r\n    </ul>\r\n  </li>\r\n  <li class=\"xyz-nav-item   xyz-nav-item-dept\"> <div class=\"xyz-nav-item-label\"><a>链接管理</a></div></li>\r\n  <li class=\"xyz-nav-item   xyz-nav-item-dept\"> <div class=\"xyz-nav-item-label\"><a>风格管理</a></div></li>\r\n  <li class=\"xyz-nav-item   xyz-nav-item-dept\"> <div class=\"xyz-nav-item-label\"><a>字典管理</a></div></li>\r\n  <li class=\"xyz-nav-item   xyz-nav-item-dept\"> <div class=\"xyz-nav-item-label\"><a>组件管理</a></div> </li> -->\r\n</ul>\r\n"
 
 /***/ }),
 
@@ -1322,7 +1343,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
  * @Author: zb
  * @Date: 2018-10-20 11:07:31
  * @LastEditors: zb
- * @LastEditTime: 2019-10-28 00:21:26
+ * @LastEditTime: 2019-10-28 19:25:54
  */
 
 var NavComponent = /** @class */ (function () {
@@ -1398,7 +1419,7 @@ var NavComponent = /** @class */ (function () {
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('menus'),
-        __metadata("design:type", Object)
+        __metadata("design:type", Array)
     ], NavComponent.prototype, "menus", void 0);
     NavComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1409,6 +1430,84 @@ var NavComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]])
     ], NavComponent);
     return NavComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/layout/sidebar/nav/sub-nav/sub-nav.component.html":
+/*!*******************************************************************!*\
+  !*** ./src/app/layout/sidebar/nav/sub-nav/sub-nav.component.html ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!--\n * @Description: TODO \n * @Author: zb\n * @Date: 2019-10-28 19:49:47\n * @LastEditors: zb\n * @LastEditTime: 2019-10-28 21:05:58\n -->\n\n    <ul class=\"xyz-child-nav\">\n        <ng-container *ngFor=\"let menu of menus\">\n          <li class=\"xyz-nav-item xyz-nav-item-dept-{{level}}\">\n            <div class=\"xyz-nav-item-label\"><a>{{menu.text}}</a></div>\n            <xyz-sub-nav *ngIf=\"menu.children && menu.children.length > 0\" [level]=\"level+1\" [menus] =\"menu.children\"></xyz-sub-nav>\n          </li>\n        </ng-container>\n    </ul>"
+
+/***/ }),
+
+/***/ "./src/app/layout/sidebar/nav/sub-nav/sub-nav.component.scss":
+/*!*******************************************************************!*\
+  !*** ./src/app/layout/sidebar/nav/sub-nav/sub-nav.component.scss ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/layout/sidebar/nav/sub-nav/sub-nav.component.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/layout/sidebar/nav/sub-nav/sub-nav.component.ts ***!
+  \*****************************************************************/
+/*! exports provided: SubNavComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SubNavComponent", function() { return SubNavComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+/*
+ * @Description: TODO
+ * @Author: zb
+ * @Date: 2019-10-28 19:49:47
+ * @LastEditors: zb
+ * @LastEditTime: 2019-10-28 21:03:04
+ */
+
+var SubNavComponent = /** @class */ (function () {
+    function SubNavComponent() {
+    }
+    SubNavComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('level'),
+        __metadata("design:type", Number)
+    ], SubNavComponent.prototype, "level", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('menus'),
+        __metadata("design:type", Array)
+    ], SubNavComponent.prototype, "menus", void 0);
+    SubNavComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'xyz-sub-nav',
+            template: __webpack_require__(/*! ./sub-nav.component.html */ "./src/app/layout/sidebar/nav/sub-nav/sub-nav.component.html"),
+            styles: [__webpack_require__(/*! ./sub-nav.component.scss */ "./src/app/layout/sidebar/nav/sub-nav/sub-nav.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], SubNavComponent);
+    return SubNavComponent;
 }());
 
 
@@ -1459,6 +1558,13 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+/*
+ * @Description: TODO
+ * @Author: zb
+ * @Date: 2019-10-28 00:22:42
+ * @LastEditors: zb
+ * @LastEditTime: 2019-10-28 17:48:16
+ */
 
 
 
@@ -1475,12 +1581,14 @@ var SidebarComponent = /** @class */ (function () {
         };
     }
     SidebarComponent.prototype.ngOnInit = function () {
-        // this.sideSev.Menus.subscribe(next => {
-        //   this.menus = toTreeData(next['data']['menus'], this.attr);
-        //   console.log(this.menus)
-        // }, error => {
-        //   console.log(error);
-        // });
+        var _this = this;
+        this.sideSev.Menus.subscribe(function (next) {
+            _this.menus = next;
+            // this.menus = toTreeData(next['data']['menus'], this.attr);
+            console.log(_this.menus);
+        }, function (error) {
+            console.log(error);
+        });
     };
     SidebarComponent.prototype.toggleSide = function () {
         this.sev.asidebarClose = !this.sev.asidebarClose;
@@ -1512,6 +1620,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SidebarService", function() { return SidebarService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _core_services_http_client_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @core/services/http-client.service */ "./src/app/core/services/http-client.service.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1521,15 +1630,115 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+/*
+ * @Description: TODO
+ * @Author: zb
+ * @Date: 2019-10-28 00:22:42
+ * @LastEditors: zb
+ * @LastEditTime: 2019-10-28 19:23:07
+ */
 
 
+
+var menus = [
+    {
+        'text': '主导航',
+        'group': true,
+        'children': [
+            {
+                'text': '主页',
+                'link': '/index',
+                'icon': 'anticon anticon-home'
+            },
+            {
+                'text': '快捷菜单',
+                'icon': 'icon-rocket',
+                'shortcut_root': true,
+                'children': []
+            }
+        ]
+    },
+    {
+        'text': '系统设置',
+        'group': true,
+        'children': [
+            {
+                'text': '个人信息管理',
+                'link': '/personal',
+                'icon': 'fa fa-address-card'
+            },
+            {
+                'text': '用户管理',
+                'link': '/user',
+                'icon': 'fa fa-user'
+            },
+            {
+                'text': '码值管理',
+                'link': '/code',
+                'icon': 'fa fa-pencil'
+            }
+        ]
+    },
+    {
+        'text': '综合管理',
+        'group': true,
+        'children': [
+            {
+                'text': '地图数据管理',
+                'link': '/map-data',
+                'icon': 'fa fa-map'
+            },
+            {
+                'text': '文章类别管理',
+                'link': '/pasType',
+                'icon': 'fa fa-bars'
+            },
+            {
+                'text': '文章管理',
+                'link': '/passage',
+                'icon': 'fa fa-th-large'
+            },
+            {
+                'text': '文章文件管理',
+                'link': '/passage-file',
+                'icon': 'fa fa-file'
+            },
+            {
+                'text': '相册管理',
+                'link': '/photo',
+                'icon': 'fa fa-area-chart'
+            },
+            {
+                'text': '音乐管理',
+                'link': '/music',
+                'icon': 'fa fa-music'
+            },
+            {
+                'text': '留言管理',
+                'link': '/comment',
+                'icon': 'fa fa-comments'
+            },
+            {
+                'text': '幻灯片管理',
+                'link': '/slide',
+                'icon': 'fa fa-flash'
+            },
+            {
+                'text': '友情链接管理',
+                'link': '/flink',
+                'icon': 'fa fa-link'
+            }
+        ]
+    }
+];
 var SidebarService = /** @class */ (function () {
     function SidebarService(http) {
         this.http = http;
     }
     Object.defineProperty(SidebarService.prototype, "Menus", {
         get: function () {
-            return this.http.get('base/menu/get');
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(menus);
+            // return this.http.get('base/menu/get');
         },
         enumerable: true,
         configurable: true

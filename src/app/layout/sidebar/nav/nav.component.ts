@@ -3,7 +3,7 @@
  * @Author: zb
  * @Date: 2018-10-20 11:07:31
  * @LastEditors: zb
- * @LastEditTime: 2019-10-28 00:21:26
+ * @LastEditTime: 2019-10-28 19:25:54
  */
 import { Component, OnInit, Input, AfterViewInit, ElementRef, Renderer2 } from '@angular/core';
 
@@ -14,11 +14,12 @@ import { Component, OnInit, Input, AfterViewInit, ElementRef, Renderer2 } from '
 })
 export class NavComponent implements OnInit, AfterViewInit  {
 
-  @Input('menus') menus;
+  @Input('menus') menus: any[];
 
   constructor(private el: ElementRef<HTMLUListElement>, private render: Renderer2) { }
 
   ngOnInit() {
+    
   }
 
   ngAfterViewInit() {

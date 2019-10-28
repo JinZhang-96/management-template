@@ -3,10 +3,16 @@
  * @Author: zb
  * @Date: 2018-11-17 20:45:04
  * @LastEditors: zb
- * @LastEditTime: 2019-10-27 23:20:31
+ * @LastEditTime: 2019-10-28 21:05:47
  -->
 <ul class="xyz-nav">
-  <li class="xyz-nav-item xyz-nav-item-close   xyz-nav-item-dept">
+  <ng-container *ngFor="let menu of menus">
+      <li class="xyz-nav-item   xyz-nav-item-dept-0" [class.xyz-nav-item-close]="menu.children && menu.children.length > 0">
+         <div class="xyz-nav-item-label"><a>{{menu.text}}</a></div>
+         <xyz-sub-nav *ngIf="menu.children && menu.children.length > 0" [level]="1" [menus]="menu.children"></xyz-sub-nav>         
+      </li>
+  </ng-container>
+  <!-- <li class="xyz-nav-item xyz-nav-item-close   xyz-nav-item-dept">
     <div class="xyz-nav-item-label"><a>系统管理</a></div>
     <ul class="xyz-child-nav">
       <li class="xyz-nav-item  xyz-nav-item-dept-1"><div class="xyz-nav-item-label"><a>菜单管理</a></div></li>
@@ -21,5 +27,5 @@
   <li class="xyz-nav-item   xyz-nav-item-dept"> <div class="xyz-nav-item-label"><a>链接管理</a></div></li>
   <li class="xyz-nav-item   xyz-nav-item-dept"> <div class="xyz-nav-item-label"><a>风格管理</a></div></li>
   <li class="xyz-nav-item   xyz-nav-item-dept"> <div class="xyz-nav-item-label"><a>字典管理</a></div></li>
-  <li class="xyz-nav-item   xyz-nav-item-dept"> <div class="xyz-nav-item-label"><a>组件管理</a></div> </li>
+  <li class="xyz-nav-item   xyz-nav-item-dept"> <div class="xyz-nav-item-label"><a>组件管理</a></div> </li> -->
 </ul>
