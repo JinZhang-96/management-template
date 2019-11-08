@@ -1,3 +1,10 @@
+/*
+ * @Description: TODO 
+ * @Author: zb
+ * @Date: 2019-10-28 00:22:42
+ * @LastEditors: zb
+ * @LastEditTime: 2019-11-08 22:05:40
+ */
 import {Injectable} from '@angular/core';
 
 @Injectable({
@@ -14,12 +21,14 @@ export class LayoutService {
   /**
    * 内容区是否全屏
    * @type {boolean}
+   // tslint:disable-next-line: no-redundant-jsdoc
    * @private
    */
   private _contentFull = false;
 
 
   constructor() {
+    
   }
 
 
