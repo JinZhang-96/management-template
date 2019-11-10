@@ -6,7 +6,7 @@ export const environment = {
   serve_url : 'http://127.0.0.1:8080',
   SERVER_PREFIX: 'api/',
   production: false,
-  hmr: false
+  hmr: true
 };
 
 /*

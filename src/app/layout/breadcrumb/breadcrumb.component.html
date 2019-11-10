@@ -6,14 +6,30 @@
  * @LastEditTime: 2018-10-20 16:08:53
  -->
 <div class="xyz-breadcrumb-content">
-  <div>
+  <div class="xyz-breadcrumb-path">
+    <ul class="xyz-breadcrumb-path-container">
+
+      <li *ngFor="let n of rNodes" class="xyz-breadcrumb-path-container-item">
+        <span (click)="addNode()">
+            {{n?.text}}
+        </span>
+        <span class="fa-stack" >
+          <i class="fa fa-close fa-stack-1x"></i>               
+        </span>
+      </li>      
+    </ul>
   </div>
 
-  <ul class="xyz-breadcrumb-tools ">
+  <ul class="xyz-breadcrumb-tools">
     <li (click)="fullScreen()">
       <div class="item">
         <i class="fa fa-arrows-alt" aria-hidden="true"></i>
       </div>
     </li>
+    <li (click)="fullScreen()">
+        <div class="item">
+          <i class="anticon anticon-setting"></i>
+        </div>
+      </li>
   </ul>
 </div>

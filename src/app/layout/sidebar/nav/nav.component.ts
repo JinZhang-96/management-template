@@ -16,6 +16,10 @@ export class NavComponent implements OnInit, AfterViewInit {
 
   @Input('menus') menus: any[];
 
+
+  // 控制菜单是否只能同时打开一个
+  @Input('switch') switch: boolean = true
+
   constructor(private el: ElementRef<HTMLUListElement>, private render: Renderer2) { }
 
   ngOnInit() {
@@ -30,7 +34,23 @@ export class NavComponent implements OnInit, AfterViewInit {
         e.cancelBubble = true; //  取消事件冒泡
         if (element.classList.contains('xyz-nav-item-close') || element.classList.contains('xyz-nav-item-open')) {
           // 必须是当前元素才可以触发逻辑
-          if (element.classList.contains('xyz-nav-item-close')) {
+
+          // 如果当前菜单式关闭的，则打开菜单
+          if (element.classList.contains('xyz-nav-item-close')) { 
+            // 打开菜单之前，先判断同级菜单中是否有打开的菜单
+            if(this.switch) {
+              if(element.parentElement && element.parentElement.children) {
+                const someLevelNodes = element.parentElement.children
+                for(let i = 0; i< someLevelNodes.length; i++) {
+                  const el: Element = someLevelNodes.item(i)
+                  if( el.classList.contains('xyz-nav-item-open') ){
+                    el.classList.remove('xyz-nav-item-open')
+                    el.classList.add('xyz-nav-item-close')
+                  }
+                }
+              }
+            }
+
             element.classList.remove('xyz-nav-item-close')
             element.classList.add('xyz-nav-item-open')
           } else if (element.classList.contains('xyz-nav-item-open')) {

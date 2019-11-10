@@ -7,6 +7,7 @@
  */
 import { Component, OnInit, Input, AfterViewInit, ElementRef, Renderer2 } from '@angular/core';
 import { LayoutService } from '../layout/layout.service';
+import { RouterNode } from '@core/class-modal';
 
 @Component({
   selector: 'xyz-breadcrumb',
@@ -15,28 +16,46 @@ import { LayoutService } from '../layout/layout.service';
 })
 export class BreadcrumbComponent implements OnInit, AfterViewInit {
 
+  private rNodes = [new RouterNode('首页','index'), new RouterNode('菜单管理', 'menu')]
+
+  private routerContainer: HTMLUListElement
+  
   constructor(private laySev: LayoutService, private el: ElementRef<HTMLUListElement>, private render: Renderer2 ) { }
 
   ngOnInit() {
   }
 
   ngAfterViewInit() {
-    const els = this.el.nativeElement.querySelectorAll<Element>('.xyz-breadcrumb-tools li')
+    // 设置操作工具的样式
+    const els: NodeListOf<Element> = this.el.nativeElement.querySelectorAll<Element>('.xyz-breadcrumb-tools li')
     for(let i = 0; i < els.length; i++) {
       els.item(i).addEventListener('click', (e: MouseEvent) => {
-          els.item(i).classList.toggle('active')
+         for(let i = 0; i< els.length; i++) {
+          const element = els.item(i);
+          if(element.classList.contains('active')) {
+            element.classList.remove('active')
+          }
+         }
+        els.item(i).classList.toggle('active')
       })
     }
-    // els.forEach( (element: Element) => { 
-    //   element.addEventListener('click', (e: MouseEvent) => {
-    //      element.classList.toggle('active')
-    //   })
-    // })
+
+    // 设置URL列表的样式
+    this.routerContainer = this.el.nativeElement.querySelector<HTMLUListElement>('.xyz-breadcrumb-path .xyz-breadcrumb-path-container')
+    this.routerContainer.addEventListener('resize', (e: Event) =>{
+      console.log(this.routerContainer)
+    })
+
   }
 
 
   fullScreen() {
       this.laySev.contentFull = !this.laySev.contentFull;
+  }
+
+  addNode() {
+    console.log(this.routerContainer.getBoundingClientRect())
+    this.rNodes.push(new RouterNode('座位管理','desktop'))
   }
 
 }

@@ -429,22 +429,37 @@ module.exports = ""
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _core_services_theme_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @core/services/theme.service */ "./src/app/core/services/theme.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+/*
+ * @Description: TODO
+ * @Author: zb
+ * @Date: 2019-10-28 00:22:42
+ * @LastEditors: zb
+ * @LastEditTime: 2019-11-08 22:30:51
+ */
+
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(themeService) {
+        this.themeService = themeService;
+        // themeService
     }
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'xyz-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")]
-        })
+        }),
+        __metadata("design:paramtypes", [_core_services_theme_service__WEBPACK_IMPORTED_MODULE_1__["ThemeService"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -532,6 +547,70 @@ var AppModule = /** @class */ (function () {
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/core/class-modal/index.ts":
+/*!*******************************************!*\
+  !*** ./src/app/core/class-modal/index.ts ***!
+  \*******************************************/
+/*! exports provided: RouterNode */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _router_node__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./router-node */ "./src/app/core/class-modal/router-node.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RouterNode", function() { return _router_node__WEBPACK_IMPORTED_MODULE_0__["RouterNode"]; });
+
+
+
+
+/***/ }),
+
+/***/ "./src/app/core/class-modal/router-node.ts":
+/*!*************************************************!*\
+  !*** ./src/app/core/class-modal/router-node.ts ***!
+  \*************************************************/
+/*! exports provided: RouterNode */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RouterNode", function() { return RouterNode; });
+/**
+ * 路由节点
+ */
+var RouterNode = /** @class */ (function () {
+    function RouterNode(t, u) {
+        this.t = t;
+        this.u = u;
+        this._text = t;
+        this._url = u;
+    }
+    Object.defineProperty(RouterNode.prototype, "text", {
+        get: function () {
+            return this._text;
+        },
+        set: function (_text) {
+            this._text = _text;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RouterNode.prototype, "url", {
+        get: function () {
+            return this._url;
+        },
+        set: function (_url) {
+            this._url = _url;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return RouterNode;
 }());
 
 
@@ -879,6 +958,94 @@ var HttpClientService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/core/services/theme.service.ts":
+/*!************************************************!*\
+  !*** ./src/app/core/services/theme.service.ts ***!
+  \************************************************/
+/*! exports provided: ThemeService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ThemeService", function() { return ThemeService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+/*
+ * @Description: TODO 风格设置服务
+ * @Author: zb
+ * @Date: 2019-11-08 21:26:30
+ * @LastEditors: zb
+ * @LastEditTime: 2019-11-08 23:07:22
+ */
+
+
+var themeA = __webpack_require__(/*! assets/styles/themes/_default-theme.scss */ "./src/assets/styles/themes/_default-theme.scss");
+var ThemeService = /** @class */ (function () {
+    function ThemeService(doc) {
+        var _this = this;
+        this.doc = doc;
+        this.defaultTheme = 'B';
+        setTimeout(function () {
+            _this.createStyle();
+            _this.setTheme('A');
+        }, 100);
+    }
+    ThemeService.prototype.createStyle = function () {
+        var head = this.doc.head || this.doc.getElementsByTagName('head')[0];
+        this.styleTag = this.doc.createElement('style');
+        this.styleTag.id = 'appthemes';
+        head.appendChild(this.styleTag);
+    };
+    ThemeService.prototype.setTheme = function (name) {
+        var _a;
+        if (name === this.defaultTheme) {
+            return;
+        }
+        var bodyEl = this.doc.querySelector('body');
+        var removeArr = [];
+        for (var i = 0; i < bodyEl.classList.length; i++) {
+            if (bodyEl.classList[i].startsWith('theme-')) {
+                removeArr.push(bodyEl.classList[i]);
+            }
+        }
+        (_a = bodyEl.classList).remove.apply(_a, removeArr);
+        bodyEl.classList.add("theme-" + name.toLowerCase());
+        var idx = name.charCodeAt(0) - 65;
+        this.injectStylesheet([themeA][idx]);
+        this.defaultTheme = name;
+    };
+    ThemeService.prototype.injectStylesheet = function (css) {
+        this.styleTag.innerHTML = css;
+    };
+    ThemeService.prototype.getDefaultTheme = function () {
+        return this.defaultTheme;
+    };
+    ThemeService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_common__WEBPACK_IMPORTED_MODULE_1__["DOCUMENT"])),
+        __metadata("design:paramtypes", [Document])
+    ], ThemeService);
+    return ThemeService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/layout/breadcrumb/breadcrumb.component.html":
 /*!*************************************************************!*\
   !*** ./src/app/layout/breadcrumb/breadcrumb.component.html ***!
@@ -886,7 +1053,7 @@ var HttpClientService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--\r\n * @Description: TODO \r\n * @Author: zb\r\n * @Date: 2018-10-20 16:08:53\r\n * @LastEditors: zb\r\n * @LastEditTime: 2018-10-20 16:08:53\r\n -->\r\n<div class=\"xyz-breadcrumb-content\">\r\n  <div>\r\n  </div>\r\n\r\n  <ul class=\"xyz-breadcrumb-tools \">\r\n    <li (click)=\"fullScreen()\">\r\n      <div class=\"item\">\r\n        <i class=\"fa fa-arrows-alt\" aria-hidden=\"true\"></i>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n</div>\r\n"
+module.exports = "<!--\r\n * @Description: TODO \r\n * @Author: zb\r\n * @Date: 2018-10-20 16:08:53\r\n * @LastEditors: zb\r\n * @LastEditTime: 2018-10-20 16:08:53\r\n -->\r\n<div class=\"xyz-breadcrumb-content\">\r\n  <div class=\"xyz-breadcrumb-path\">\r\n    <ul class=\"xyz-breadcrumb-path-container\">\r\n\r\n      <li *ngFor=\"let n of rNodes\" class=\"xyz-breadcrumb-path-container-item\">\r\n        <span (click)=\"addNode()\">\r\n            {{n?.text}}\r\n        </span>\r\n        <span class=\"fa-stack\" >\r\n          <i class=\"fa fa-close fa-stack-1x\"></i>               \r\n        </span>\r\n      </li>      \r\n    </ul>\r\n  </div>\r\n\r\n  <ul class=\"xyz-breadcrumb-tools\">\r\n    <li (click)=\"fullScreen()\">\r\n      <div class=\"item\">\r\n        <i class=\"fa fa-arrows-alt\" aria-hidden=\"true\"></i>\r\n      </div>\r\n    </li>\r\n    <li (click)=\"fullScreen()\">\r\n        <div class=\"item\">\r\n          <i class=\"anticon anticon-setting\"></i>\r\n        </div>\r\n      </li>\r\n  </ul>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -913,6 +1080,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbComponent", function() { return BreadcrumbComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _layout_layout_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../layout/layout.service */ "./src/app/layout/layout/layout.service.ts");
+/* harmony import */ var _core_class_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @core/class-modal */ "./src/app/core/class-modal/index.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -931,32 +1099,46 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
  */
 
 
+
 var BreadcrumbComponent = /** @class */ (function () {
     function BreadcrumbComponent(laySev, el, render) {
         this.laySev = laySev;
         this.el = el;
         this.render = render;
+        this.rNodes = [new _core_class_modal__WEBPACK_IMPORTED_MODULE_2__["RouterNode"]('首页', 'index'), new _core_class_modal__WEBPACK_IMPORTED_MODULE_2__["RouterNode"]('菜单管理', 'menu')];
     }
     BreadcrumbComponent.prototype.ngOnInit = function () {
     };
     BreadcrumbComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        // 设置操作工具的样式
         var els = this.el.nativeElement.querySelectorAll('.xyz-breadcrumb-tools li');
         var _loop_1 = function (i) {
             els.item(i).addEventListener('click', function (e) {
+                for (var i_1 = 0; i_1 < els.length; i_1++) {
+                    var element = els.item(i_1);
+                    if (element.classList.contains('active')) {
+                        element.classList.remove('active');
+                    }
+                }
                 els.item(i).classList.toggle('active');
             });
         };
         for (var i = 0; i < els.length; i++) {
             _loop_1(i);
         }
-        // els.forEach( (element: Element) => { 
-        //   element.addEventListener('click', (e: MouseEvent) => {
-        //      element.classList.toggle('active')
-        //   })
-        // })
+        // 设置URL列表的样式
+        this.routerContainer = this.el.nativeElement.querySelector('.xyz-breadcrumb-path .xyz-breadcrumb-path-container');
+        this.routerContainer.addEventListener('resize', function (e) {
+            console.log(_this.routerContainer);
+        });
     };
     BreadcrumbComponent.prototype.fullScreen = function () {
         this.laySev.contentFull = !this.laySev.contentFull;
+    };
+    BreadcrumbComponent.prototype.addNode = function () {
+        console.log(this.routerContainer.getBoundingClientRect());
+        this.rNodes.push(new _core_class_modal__WEBPACK_IMPORTED_MODULE_2__["RouterNode"]('座位管理', 'desktop'));
     };
     BreadcrumbComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1043,7 +1225,7 @@ var ContentComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--\r\n * @Description: TODO \r\n * @Author: zb\r\n * @Date: 2019-10-28 00:22:42\r\n * @LastEditors: zb\r\n * @LastEditTime: 2019-10-28 19:26:41\r\n -->\r\n<div class=\"xyz-header-logo\">\r\n  <a [routerLink]=\"['/']\" class=\"xyz-logo-link\">\r\n    <strong>\r\n      张贝后台模板\r\n    </strong>\r\n    <!--<img class=\"alain-default__header-logo-expanded\" src=\"./assets/logo-full.svg\" alt=\"{{settings.app.name}}\" style=\"max-height:40px;\" />-->\r\n    <!--<img class=\"alain-default__header-logo-collapsed\" src=\"./assets/logo.svg\" alt=\"{{settings.app.name}}\" style=\"max-height:30px;\" />-->\r\n  </a>\r\n</div>\r\n<div class=\"xyz-top-nav-wrap\">\r\n  <ul class=\"xyz-top-nav\">\r\n    <!-- Menu -->\r\n    <li>\r\n      <div class=\"item\">\r\n        <i class=\"anticon anticon-menu-fold\"></i>\r\n      </div>\r\n    </li>\r\n    <li class=\"hidden-xs\">\r\n      <div class=\"item\" [routerLink]=\"['/lock']\">\r\n        <i class=\"anticon anticon-lock\"></i>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n\r\n  <ul class=\"xyz-top-nav\">\r\n    <li class=\"hidden-xs\">\r\n      <div class=\"item\">\r\n        <i class=\"anticon anticon-setting\"></i>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n</div>\r\n"
+module.exports = "<!--\r\n * @Description: TODO \r\n * @Author: zb\r\n * @Date: 2019-10-28 00:22:42\r\n * @LastEditors: zb\r\n * @LastEditTime: 2019-10-28 19:26:41\r\n -->\r\n<div class=\"xyz-header-logo\">\r\n  <a [routerLink]=\"['/']\" class=\"xyz-logo-link\">\r\n    <strong>\r\n      张贝后台模板\r\n    </strong>\r\n    <!--<img class=\"alain-default__header-logo-expanded\" src=\"./assets/logo-full.svg\" alt=\"{{settings.app.name}}\" style=\"max-height:40px;\" />-->\r\n    <!--<img class=\"alain-default__header-logo-collapsed\" src=\"./assets/logo.svg\" alt=\"{{settings.app.name}}\" style=\"max-height:30px;\" />-->\r\n  </a>\r\n</div>\r\n<div class=\"xyz-top-nav-wrap\">\r\n  <ul class=\"xyz-top-nav\">\r\n    <!-- Menu -->\r\n    <!-- <li>\r\n      <div class=\"item\">\r\n        <i class=\"anticon anticon-menu-fold\"></i>\r\n      </div>\r\n    </li>\r\n    <li class=\"hidden-xs\">\r\n      <div class=\"item\" [routerLink]=\"['/lock']\">\r\n        <i class=\"anticon anticon-lock\"></i>\r\n      </div>\r\n    </li> -->\r\n  </ul>\r\n\r\n  <ul class=\"xyz-top-nav\">\r\n    <!-- <li class=\"hidden-xs\">\r\n      <div class=\"item\">\r\n        <i class=\"anticon anticon-setting\"></i>\r\n      </div>\r\n    </li> -->\r\n  </ul>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1248,6 +1430,13 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+/*
+ * @Description: TODO
+ * @Author: zb
+ * @Date: 2019-10-28 00:22:42
+ * @LastEditors: zb
+ * @LastEditTime: 2019-11-08 22:05:40
+ */
 
 var LayoutService = /** @class */ (function () {
     function LayoutService() {
@@ -1259,6 +1448,7 @@ var LayoutService = /** @class */ (function () {
         /**
          * 内容区是否全屏
          * @type {boolean}
+         // tslint:disable-next-line: no-redundant-jsdoc
          * @private
          */
         this._contentFull = false;
@@ -1343,13 +1533,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
  * @Author: zb
  * @Date: 2018-10-20 11:07:31
  * @LastEditors: zb
- * @LastEditTime: 2019-10-28 19:25:54
+ * @LastEditTime: 2019-11-08 23:37:57
  */
 
 var NavComponent = /** @class */ (function () {
     function NavComponent(el, render) {
         this.el = el;
         this.render = render;
+        // 控制菜单是否只能同时打开一个
+        this.switch = true;
     }
     NavComponent.prototype.ngOnInit = function () {
     };
@@ -1360,28 +1552,46 @@ var NavComponent = /** @class */ (function () {
             var element = els.item(i);
             element.addEventListener('click', function (e) {
                 e.cancelBubble = true; //  取消事件冒泡
-                var selectedItem = _this.el.nativeElement.querySelector('.xyz-nav-item-selected');
-                if (selectedItem) {
-                    selectedItem.classList.remove('xyz-nav-item-selected');
-                    if (selectedItem !== element) {
-                        element.classList.add('xyz-nav-item-selected');
+                if (element.classList.contains('xyz-nav-item-close') || element.classList.contains('xyz-nav-item-open')) {
+                    // 必须是当前元素才可以触发逻辑
+                    // 如果当前菜单式关闭的，则打开菜单
+                    if (element.classList.contains('xyz-nav-item-close')) {
+                        // 打开菜单之前，先判断同级菜单中是否有打开的菜单
+                        if (_this.switch) {
+                            if (element.parentElement && element.parentElement.children) {
+                                var someLevelNodes = element.parentElement.children;
+                                for (var i_1 = 0; i_1 < someLevelNodes.length; i_1++) {
+                                    var el = someLevelNodes.item(i_1);
+                                    if (el.classList.contains('xyz-nav-item-open')) {
+                                        el.classList.remove('xyz-nav-item-open');
+                                        el.classList.add('xyz-nav-item-close');
+                                    }
+                                }
+                            }
+                        }
+                        element.classList.remove('xyz-nav-item-close');
+                        element.classList.add('xyz-nav-item-open');
+                    }
+                    else if (element.classList.contains('xyz-nav-item-open')) {
+                        var state = e.target === element
+                            || e.target === element.children[0]
+                            || e.target === (element.children[0] && element.children[0].children[0]);
+                        if (state) {
+                            element.classList.remove('xyz-nav-item-open');
+                            element.classList.add('xyz-nav-item-close');
+                        }
                     }
                 }
                 else {
-                    element.classList.add('xyz-nav-item-selected');
-                }
-                // 必须是当前元素才可以触发逻辑
-                if (element.classList.contains('xyz-nav-item-close')) {
-                    element.classList.remove('xyz-nav-item-close');
-                    element.classList.add('xyz-nav-item-open');
-                }
-                else if (element.classList.contains('xyz-nav-item-open')) {
-                    var state = e.target === element
-                        || e.target === element.children[0]
-                        || e.target === (element.children[0] && element.children[0].children[0]);
-                    if (state) {
-                        element.classList.remove('xyz-nav-item-open');
-                        element.classList.add('xyz-nav-item-close');
+                    var selectedItem = _this.el.nativeElement.querySelector('.xyz-nav-item-selected');
+                    if (selectedItem) {
+                        selectedItem.classList.remove('xyz-nav-item-selected');
+                        if (selectedItem !== element) {
+                            element.classList.add('xyz-nav-item-selected');
+                        }
+                    }
+                    else {
+                        element.classList.add('xyz-nav-item-selected');
                     }
                 }
             });
@@ -1421,6 +1631,10 @@ var NavComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('menus'),
         __metadata("design:type", Array)
     ], NavComponent.prototype, "menus", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('switch'),
+        __metadata("design:type", Boolean)
+    ], NavComponent.prototype, "switch", void 0);
     NavComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'xyz-nav',
@@ -1902,6 +2116,17 @@ var SimpleTableComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/assets/styles/themes/_default-theme.scss":
+/*!******************************************************!*\
+  !*** ./src/assets/styles/themes/_default-theme.scss ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "@charset \"UTF-8\";\n/**\r\n  根据颜色名字获取进制\r\n */\n/**\r\n   应用前缀\r\n */\n/**\r\n  应用初始z-index\r\n */\n.xyz-header {\n  background-color: #108ee9;\n  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2); }\n.xyz-header .item {\n    color: #fff !important; }\n.xyz-header .item:hover {\n      background-color: rgba(255, 255, 255, 0.2) !important; }\n.xyz-asider {\n  box-shadow: 1px 0 10px rgba(0, 0, 0, 0.2);\n  background-color: #404040;\n  color: #000; }\n.xyz-asider .xyz-nav {\n    color: #f5f7fa; }\n.xyz-asider .xyz-nav-item, .xyz-asider .xyz-nav li {\n      color: #f5f7fa; }\n.xyz-asider .xyz-nav-item-label, .xyz-asider .xyz-nav li-label {\n        color: #f5f7fa;\n        border-right: solid 3px rgba(0, 0, 0, 0); }\n.xyz-asider .xyz-nav-item-label a, .xyz-asider .xyz-nav li-label a {\n          color: #f5f7fa; }\n.xyz-asider .xyz-nav-item-label:hover a, .xyz-asider .xyz-nav li-label:hover a {\n          color: #108ee9 !important; }\n.xyz-asider .xyz-nav-item-selected > .xyz-nav-item-label, .xyz-asider .xyz-nav li-selected > .xyz-nav-item-label {\n        background-color: #e6f7ff;\n        border-right: 3px solid #1890ff; }\n.xyz-asider .xyz-nav-item-selected > .xyz-nav-item-label > a, .xyz-asider .xyz-nav li-selected > .xyz-nav-item-label > a {\n          color: #108ee9 !important; }\n"
+
+/***/ }),
+
 /***/ "./src/environments/environment.ts":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -1919,7 +2144,7 @@ var environment = {
     serve_url: 'http://127.0.0.1:8080',
     SERVER_PREFIX: 'api/',
     production: false,
-    hmr: false
+    hmr: true
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -1929,6 +2154,39 @@ var environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
+/***/ }),
+
+/***/ "./src/hmr.ts":
+/*!********************!*\
+  !*** ./src/hmr.ts ***!
+  \********************/
+/*! exports provided: hmrBootstrap */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hmrBootstrap", function() { return hmrBootstrap; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angularclass_hmr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angularclass/hmr */ "./node_modules/@angularclass/hmr/dist/index.js");
+/* harmony import */ var _angularclass_hmr__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angularclass_hmr__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var hmrBootstrap = function (module, bootstrap) {
+    var ngModule;
+    module.hot.accept();
+    bootstrap().then(function (mod) {
+        ngModule = mod;
+    });
+    module.hot.dispose(function () {
+        var appRef = ngModule.injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"]);
+        var elements = appRef.components.map(function (c) { return c.location.nativeElement; });
+        var makeVisible = Object(_angularclass_hmr__WEBPACK_IMPORTED_MODULE_1__["createNewHosts"])(elements);
+        ngModule.destroy();
+        makeVisible();
+    });
+};
 
 
 /***/ }),
@@ -1946,6 +2204,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
 /* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _hmr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./hmr */ "./src/hmr.ts");
+
 
 
 
@@ -1953,8 +2213,20 @@ __webpack_require__.r(__webpack_exports__);
 if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].production) {
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["enableProdMode"])();
 }
-Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"])
-    .catch(function (err) { return console.error(err); });
+var bootstrap = function () {
+    return Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"]);
+};
+if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].hmr) {
+    if (false) {}
+    else {
+        // 未加上 --hmr 时，控制台会有错误提醒
+        console.error('HMR is not enabled for webpack-dev-server!');
+        console.log('Are you using the --hmr flag for ng serve?');
+    }
+}
+else {
+    bootstrap().catch(function (err) { return console.error(err); });
+}
 
 
 /***/ }),
@@ -1966,7 +2238,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\My Web\management-template\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! F:\management-template\management-template\src\main.ts */"./src/main.ts");
 
 
 /***/ })

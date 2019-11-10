@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Liangshan-xingyizhan": {
+    "Tp-Bei": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -54,18 +54,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Liangshan-xingyizhan:build"
+            "browserTarget": "Tp-Bei:build",
+            "hmrWarning": false
           },
           "configurations": {
             "production": {
-              "browserTarget": "Liangshan-xingyizhan:build:production"
+              "browserTarget": "Tp-Bei:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Liangshan-xingyizhan:build"
+            "browserTarget": "Tp-Bei:build"
           }
         },
         "test": {
@@ -99,7 +100,7 @@
         }
       }
     },
-    "Liangshan-xingyizhan-e2e": {
+    "Tp-Bei-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -107,11 +108,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Liangshan-xingyizhan:serve"
+            "devServerTarget": "Tp-Bei:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Liangshan-xingyizhan:serve:production"
+              "devServerTarget": "Tp-Bei:serve:production"
             }
           }
         },
@@ -127,5 +128,5 @@
       }
     }
   },
-  "defaultProject": "Liangshan-xingyizhan"
+  "defaultProject": "tp-bei"
 }
