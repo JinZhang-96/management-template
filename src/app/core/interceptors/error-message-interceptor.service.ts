@@ -9,7 +9,7 @@ import {
   HttpHeaderResponse,
   HttpProgressEvent,
   HttpUserEvent
-} from '@angular/common/http/src/response';
+} from '@angular/common/http';
 import {HttpHandler} from '@angular/common/http/src/backend';
 import {HttpRequest} from '@angular/common/http/src/request';
 import {default as swal} from 'sweetalert2';

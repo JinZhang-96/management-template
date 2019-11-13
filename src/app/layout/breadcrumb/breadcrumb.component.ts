@@ -16,7 +16,7 @@ import { RouterNode } from '@core/class-modal';
 })
 export class BreadcrumbComponent implements OnInit, AfterViewInit {
 
-  private rNodes = [new RouterNode('首页','index'), new RouterNode('菜单管理', 'menu')]
+  rNodes = [new RouterNode('首页','index'), new RouterNode('菜单管理', 'menu')]
 
   private routerContainer: HTMLUListElement
   
@@ -52,6 +52,8 @@ export class BreadcrumbComponent implements OnInit, AfterViewInit {
   fullScreen() {
       this.laySev.contentFull = !this.laySev.contentFull;
   }
+
+
 
   addNode() {
     console.log(this.routerContainer.getBoundingClientRect())

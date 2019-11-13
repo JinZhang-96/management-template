@@ -7,7 +7,7 @@
  */
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {NgZorroAntdModule, NZ_I18N, zh_CN, NzIconModule, NZ_ICON_DEFAULT_TWOTONE_COLOR, NZ_ICONS} from 'ng-zorro-antd';
+import {NgZorroAntdModule, NZ_I18N, zh_CN, NZ_ICON_DEFAULT_TWOTONE_COLOR, NZ_ICONS } from 'ng-zorro-antd';
 import { IconDefinition } from '@ant-design/icons-angular';
 import { MenuFoldOutline, LockOutline, SettingOutline } from '@ant-design/icons-angular/icons';
 
@@ -38,7 +38,6 @@ const icons: IconDefinition[] = [ MenuFoldOutline, LockOutline, SettingOutline ]
   ],
   imports: [
     BrowserModule,
-    NzIconModule,
     LayoutModule,
     SharedModule.forRoot(),
     CoreModule,
