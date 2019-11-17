@@ -6,30 +6,37 @@
  * @LastEditTime: 2018-10-20 16:08:53
  -->
 <div class="xyz-breadcrumb-content">
-  <div class="xyz-breadcrumb-path">
-    <ul class="xyz-breadcrumb-path-container">
-
-      <li *ngFor="let n of rNodes" class="xyz-breadcrumb-path-container-item">
-        <span (click)="addNode()">
+  <div class="xyz-breadcrumb-path" #breadcrumbPath>
+    <div class="xyz-breadcrumb-path-container">
+      <span class="xyz-breadcrumb-path-container-control xyz-breadcrumb-path-container-control-prev">
+        <i class="fa fa-angle-left"></i>
+      </span>
+      <span class="xyz-breadcrumb-path-container-control xyz-breadcrumb-path-container-control-next xyz-breadcrumb-path-container-control-disable">
+        <i class="fa fa-angle-right"></i>
+      </span>
+      <ul class="xyz-breadcrumb-path-container-nodes">
+        <li *ngFor="let n of rNodes; let i=index" class="xyz-breadcrumb-path-container-item" #node{{i}}>
+          <span class="active" (click)="addNode()">
             {{n?.text}}
-        </span>
-        <span>
-          <i class="fa fa-close"></i>   
-        </span>            
-      </li>      
-    </ul>
+          </span>
+          <span (click)="removeNode($event)">
+            <i class="fa fa-close"></i>
+          </span>
+        </li>
+      </ul>
+    </div>
   </div>
 
-  <ul class="xyz-breadcrumb-tools">
+  <ul #breadcrumbTools class="xyz-breadcrumb-tools">
     <li (click)="fullScreen()">
       <div class="item">
         <i class="fa fa-arrows-alt" aria-hidden="true"></i>
       </div>
     </li>
     <li (click)="fullScreen()">
-        <div class="item">
-          <i class="anticon anticon-setting"></i>
-        </div>
-      </li>
+      <div class="item">
+        <i class="anticon anticon-setting"></i>
+      </div>
+    </li>
   </ul>
 </div>
