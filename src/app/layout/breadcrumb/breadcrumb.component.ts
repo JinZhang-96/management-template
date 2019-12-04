@@ -76,13 +76,20 @@ export class BreadcrumbComponent implements OnInit, AfterViewInit {
     this.routerContainer = this.el.nativeElement.querySelector<HTMLDivElement>('.xyz-breadcrumb-path .xyz-breadcrumb-path-container')
     const pWidth = this.routerContainer.clientWidth;
     // 有子节点插入后
-    this.routerContainer.addEventListener('DOMNodeInserted', (e: MutationEvent) =>{
+    this.routerContainer.addEventListener('DOMNodeInserted', (e: MutationEvent) => {
       // 判断路由标签是否超出容器的宽度
       e.cancelBubble = true;      
       const cWidth = (e.relatedNode as HTMLUListElement).clientWidth;
       if(cWidth > pWidth && !this.routerContainer.classList.contains('xyz-breadcrumb-path-container-scroll')) {
         this.render.addClass(this.routerContainer, 'xyz-breadcrumb-path-container-scroll')
-      } else if(cWidth <= pWidth && this.routerContainer.classList.contains('xyz-breadcrumb-path-container-scroll')) {
+      }
+    })
+    //  有节点移除后
+    this.routerContainer.addEventListener('DOMNodeRemoved', (e: MutationEvent) => {
+      // 判断路由标签是否小于容器的宽度
+      e.cancelBubble = true;      
+      const cWidth = (e.relatedNode as HTMLUListElement).clientWidth;
+      if(cWidth <= pWidth && this.routerContainer.classList.contains('xyz-breadcrumb-path-container-scroll')) {
         this.render.removeClass(this.routerContainer, 'xyz-breadcrumb-path-container-scroll')
       }
     })
