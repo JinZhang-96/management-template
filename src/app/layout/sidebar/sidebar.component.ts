@@ -46,8 +46,8 @@ export class SidebarComponent implements OnInit {
   }
 
 
-  toggleSide() {
-    this.sev.asidebarClose = !this.sev.asidebarClose;
-  }
+  // toggleSide() {
+  //   this.sev.asidebarClose = !this.sev.asidebarClose;
+  // }
 
 }

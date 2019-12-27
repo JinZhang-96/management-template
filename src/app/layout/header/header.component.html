@@ -1,14 +1,17 @@
 <!--
- * @Description: TODO 
+ * @Description: TODO 导航头
  * @Author: zb
  * @Date: 2019-10-28 00:22:42
  * @LastEditors: zb
  * @LastEditTime: 2019-10-28 19:26:41
  -->
+ <div class="xyz-header-switch" [ngClass]="{ 'xyz-header-switch-close': sev.asidebarClose}" (click)="toggleSide()">
+    <i class="fa fa-exchange" aria-hidden="true"></i>
+ </div>
 <div class="xyz-header-logo">
   <a [routerLink]="['/']" class="xyz-logo-link">
     <strong>
-      张贝后台模板
+     后台模板(拥抱开源)
     </strong>
     <!--<img class="alain-default__header-logo-expanded" src="./assets/logo-full.svg" alt="{{settings.app.name}}" style="max-height:40px;" />-->
     <!--<img class="alain-default__header-logo-collapsed" src="./assets/logo.svg" alt="{{settings.app.name}}" style="max-height:30px;" />-->

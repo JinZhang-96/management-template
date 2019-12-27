@@ -3,12 +3,6 @@
 .#{$prefix}-header {
   background-color: $header-bg;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
-  .#{$prefix}-header-switch{
-      color: #fff;
-      &:hover{
-        background-color: #0099FF !important;
-      }
-  }
   .item {
     color: #fff !important;
     &:hover {

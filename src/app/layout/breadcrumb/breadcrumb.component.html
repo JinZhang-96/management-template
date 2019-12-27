@@ -8,25 +8,25 @@
 <div class="xyz-breadcrumb-content">
   <div class="xyz-breadcrumb-path" #breadcrumbPath>
     <div class="xyz-breadcrumb-path-container">
-      <span class="xyz-breadcrumb-path-container-control xyz-breadcrumb-path-container-control-prev">
+      <span (click)="toLeft($event)" [ngClass]="{'xyz-breadcrumb-path-container-control-disable': isFrist}" class="xyz-breadcrumb-path-container-control xyz-breadcrumb-path-container-control-prev">
         <i class="fa fa-angle-left"></i>
       </span>
-      <span class="xyz-breadcrumb-path-container-control xyz-breadcrumb-path-container-control-next xyz-breadcrumb-path-container-control-disable">
+      <span  (click)="toRight($event)" [ngClass]="{'xyz-breadcrumb-path-container-control-disable': isLast}" class="xyz-breadcrumb-path-container-control xyz-breadcrumb-path-container-control-next">
         <i class="fa fa-angle-right"></i>
       </span>
-      <ul class="xyz-breadcrumb-path-container-nodes">
+      <ul class="xyz-breadcrumb-path-container-nodes" #breadcrumbRouteNodes>
         <li *ngFor="let n of rNodes; let i=index" class="xyz-breadcrumb-path-container-item" #node{{i}}>
           <span class="active" (click)="addNode()">
             {{n?.text}}
           </span>
-          <span (click)="removeNode($event)">
+          <span (click)="removeNode($event, i)">
             <i class="fa fa-close"></i>
           </span>
         </li>
       </ul>
     </div>
   </div>
-
+  <div class="xyz-divide"></div>
   <ul #breadcrumbTools class="xyz-breadcrumb-tools">
     <li (click)="fullScreen()">
       <div class="item">

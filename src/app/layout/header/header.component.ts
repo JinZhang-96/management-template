@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import {LayoutService} from '../layout/layout.service';
 @Component({
   selector: 'xyz-header',
   templateUrl: './header.component.html',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public sev: LayoutService) { }
 
   ngOnInit() {
   }
 
+  toggleSide() {
+    this.sev.asidebarClose = !this.sev.asidebarClose;
+  }
 }
