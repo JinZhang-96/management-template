@@ -15,8 +15,8 @@
         <i class="fa fa-angle-right"></i>
       </span>
       <ul class="xyz-breadcrumb-path-container-nodes" #breadcrumbRouteNodes>
-        <li *ngFor="let n of rNodes; let i=index" class="xyz-breadcrumb-path-container-item" #node{{i}}>
-          <span class="active" (click)="addNode()">
+        <li *ngFor="let n of breadcSev.rNodes; let i=index" class="xyz-breadcrumb-path-container-item" #node{{i}}>
+          <span [ngClass]="{'active':i === activeIndex}" (click)="activeRouter(i)" [routerLink]="n?.url">
             {{n?.text}}
           </span>
           <span (click)="removeNode($event, i)">

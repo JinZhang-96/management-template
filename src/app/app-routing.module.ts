@@ -19,7 +19,7 @@ const routes: Routes = [
     component: LayoutComponent,
     //   canActivateChild: [LoginGuard],
     children: [
-      {path: '', redirectTo: '', pathMatch: 'full'},
+      {path: '', redirectTo: 'code', pathMatch: 'full'},
       // {
       //   path: 'index',
       //   component: MenuTableComponent,

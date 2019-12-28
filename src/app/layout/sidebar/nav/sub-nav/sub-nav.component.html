@@ -9,7 +9,7 @@
     <ul class="xyz-child-nav">
         <ng-container *ngFor="let menu of menus">
           <li class="xyz-nav-item xyz-nav-item-dept-{{level}}">
-            <div class="xyz-nav-item-label"><a>{{menu.text}}</a></div>
+            <div class="xyz-nav-item-label" ><a [routerLink]="menu?.link"><i *ngIf="menu?.icon" class="{{menu?.icon}}"></i>{{menu.text}}</a></div>
             <xyz-sub-nav *ngIf="menu.children && menu.children.length > 0" [level]="level+1" [menus] ="menu.children"></xyz-sub-nav>
           </li>
         </ng-container>

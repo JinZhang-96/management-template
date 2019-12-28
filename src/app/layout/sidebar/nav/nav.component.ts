@@ -70,7 +70,7 @@ export class NavComponent implements OnInit, AfterViewInit {
               element.classList.add('xyz-nav-item-selected')
             }
           } else {
-            element.classList.add('xyz-nav-item-selected')
+            element.classList.add('xyz-nav-item-selected');
           }
         }
       });

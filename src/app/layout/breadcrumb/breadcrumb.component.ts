@@ -6,10 +6,10 @@
  * @LastEditTime: 2019-10-28 00:20:00
  */
 import { Component, OnInit, Input, AfterViewInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
-import { LayoutService } from '../layout/layout.service';
+import { LayoutService } from '@layout/layout/layout.service';
+import { BreadcrumbService } from '@layout/breadcrumb/breadcrumb.service';
+
 import { RouterNode } from '@core/class-modal';
-import { initChangeDetectorIfExisting } from '@angular/core/src/render3/instructions';
-import { debug } from 'util';
 
 @Component({
   selector: 'xyz-breadcrumb',
@@ -17,8 +17,6 @@ import { debug } from 'util';
   styleUrls: ['./breadcrumb.component.scss']
 })
 export class BreadcrumbComponent implements OnInit, AfterViewInit {
-
-  rNodes = [new RouterNode('首页','index'), new RouterNode('菜单管理', 'menu')]
 
   private routerContainer: HTMLDivElement
 
@@ -34,6 +32,11 @@ export class BreadcrumbComponent implements OnInit, AfterViewInit {
   // 放标签的容器的宽度
   private pWidth: number;
 
+  // 路由标签向左偏移的px单位
+  private offsetLeft: number = 0;
+
+  private activeIndex = 0;
+
   @ViewChild("breadcrumbPath")
   bp: ElementRef
 
@@ -43,9 +46,10 @@ export class BreadcrumbComponent implements OnInit, AfterViewInit {
   @ViewChild("breadcrumbRouteNodes")
   brn: ElementRef
   
-  constructor(private laySev: LayoutService, private el: ElementRef<HTMLUListElement>, private render: Renderer2 ) { }
+  constructor(private laySev: LayoutService, public breadcSev: BreadcrumbService, private el: ElementRef<HTMLUListElement>, private render: Renderer2 ) { }
 
   ngOnInit() {
+    
   }
 
   ngAfterViewInit() {
@@ -88,8 +92,18 @@ export class BreadcrumbComponent implements OnInit, AfterViewInit {
 
 
   addNode() {
-    this.rNodes.push(new RouterNode('座位管理','desktop'))
-    // this.brn.nativeElement.dispatchEvent(new CustomEvent('addNode', { detail: { width: this.brn.nativeElement.clientWidth } }));
+    this.breadcSev.rNodes.push(new RouterNode('座位管理','desktop'));
+    // 判断路由标签是否超出容器的宽度 
+     const cWidth = this.brn.nativeElement.clientWidth;
+    // 设置是否显示左右移动的按钮
+    if(!this.routerContainer.classList.contains('xyz-breadcrumb-path-container-scroll') && cWidth > this.pWidth) {
+      this.render.addClass(this.routerContainer, 'xyz-breadcrumb-path-container-scroll')
+    } else if(cWidth > this.pWidth){
+      this.toRight(null);
+    }
+    if(this.isLast){
+      this.isLast = false
+    }
   }
 
   /**
@@ -97,49 +111,53 @@ export class BreadcrumbComponent implements OnInit, AfterViewInit {
    * @param e 移除节点
    */
   removeNode(e, i) {
-    // this.render.removeChild(this.brn.nativeElement, e.target.parentElement.parentElement);
-    this.rNodes.splice(i,1);
-    // this.brn.nativeElement.dispatchEvent(new CustomEvent('removeNode', { detail: { width: this.brn.nativeElement.clientWidth } }));
+    this.breadcSev.rNodes.splice(i,1);
+    // 判断路由标签是否小于容器的宽度 
+    const cWidth = this.brn.nativeElement.clientWidth;
+    // 设置是否隐藏左右移动的按钮
+    if(this.routerContainer.classList.contains('xyz-breadcrumb-path-container-scroll') && cWidth <= this.pWidth) {
+        this.render.removeClass(this.routerContainer, 'xyz-breadcrumb-path-container-scroll')
+    } else if( this.currentIndex > 0){
+        this.toLeft(null);
+    }
   }
 
+  /**
+   * 
+   * @param e 向左移动标签
+   */
   toLeft(e: any) {
     if(this.isFrist){
       return 
     }
-    let left: string = this.brn.nativeElement.style.left;
-    left = left ? left === ''? '0px' : left: '0px';
     const nodes = this.brn.nativeElement.querySelectorAll('li');
-    this.currentIndex--;
-    const offsetLeft = nodes.length > this.currentIndex ? nodes[this.currentIndex].clientWidth: 0;
-    console.log(offsetLeft)
-    this.isFrist = Number.parseInt(left.substring(0, left.length -1 )) >= 0 ;
-    if(!this.isFrist){
-      this.render.setStyle(this.brn.nativeElement,'left', (Number.parseInt(left.substring(0, left.length - 2)) + (offsetLeft + 2)) + 'px');
+    if(nodes.length > this.currentIndex && this.currentIndex > 0){
+      const offsetLeft = nodes[--this.currentIndex].clientWidth;
+      this.offsetLeft -= offsetLeft + 2;
+      this.render.setStyle(this.brn.nativeElement,'transform', `translateX(-${this.offsetLeft}px)`);
+      this.isFrist = this.currentIndex === 0;
       if(this.isLast){
         this.isLast = false;
       }
-      if(this.currentIndex === 0){
-        this.isFrist = true;
-      }
-    }
+    } 
   }
 
+  /**
+   * 
+   * @param e 向右移动路由标签
+   */
   toRight(e: any){
     if(this.isLast){
       return 
     }
-    // const brnBoundRect = this.brn.nativeElement.getBoundingClientRect();
-    // const containerBoundRect = this.el.nativeElement.querySelector<HTMLDivElement>('.xyz-breadcrumb-path .xyz-breadcrumb-path-container')
-    // &&  this.el.nativeElement.querySelector<HTMLDivElement>('.xyz-breadcrumb-path .xyz-breadcrumb-path-container').getBoundingClientRect();
-    let left: string = this.brn.nativeElement.style.left;
-    left = left ? left === ''? '0px' : left: '0px';
+    const cWidth = this.brn.nativeElement.clientWidth;
     const nodes = this.brn.nativeElement.querySelectorAll('li');
-    const offsetLeft = nodes.length > this.currentIndex ? nodes[this.currentIndex++].clientWidth: 0;
-    const paddingLeftPx: string = document.defaultView.getComputedStyle(this.routerContainer, null).paddingLeft
-    const paddingLeft: number = Number.parseInt(paddingLeftPx.substring(0, paddingLeftPx.length - 2));
-    this.isLast = (this.brn.nativeElement.clientWidth + Number.parseInt(left.substring(0, left.length -1 ))) <= this.pWidth - paddingLeft * 2;
-    if(!this.isLast){
-      this.render.setStyle(this.brn.nativeElement,'left', (Number.parseInt(left.substring(0, left.length - 2)) - (offsetLeft + 2)) + 'px');
+    if(nodes.length > this.currentIndex && this.currentIndex > -1 && (cWidth - this.offsetLeft) > this.pWidth){
+      const offsetLeft = nodes.length > this.currentIndex ? nodes[this.currentIndex++].clientWidth: 0;
+      this.offsetLeft += offsetLeft + 2;
+      this.render.setStyle(this.brn.nativeElement,'transform', `translateX(-${this.offsetLeft}px)`);
+
+      this.isLast = this.currentIndex === nodes.length - 1 || this.currentIndex > nodes.length - 1 || (cWidth - this.offsetLeft) > this.pWidth;
       if(this.isFrist){
         this.isFrist = false;
       }
@@ -162,29 +180,33 @@ export class BreadcrumbComponent implements OnInit, AfterViewInit {
   }
 
   initPath() {
-    // 设置URL列表的样式
-    // this.routerContainer = this.el.nativeElement.querySelector<HTMLDivElement>('.xyz-breadcrumb-path .xyz-breadcrumb-path-container')
-    // const pWidth = this.routerContainer.clientWidth;
     // 有子节点插入后
-    this.routerContainer.addEventListener('DOMNodeInserted', (e: MutationEvent) => {
-      // 判断路由标签是否超出容器的宽度
-      e.cancelBubble = true;      
-      const cWidth = (e.relatedNode as HTMLUListElement).clientWidth;
-      // 设置是否显示左右移动的按钮
-      if(cWidth > this.pWidth && !this.routerContainer.classList.contains('xyz-breadcrumb-path-container-scroll')) {
-        this.render.addClass(this.routerContainer, 'xyz-breadcrumb-path-container-scroll')
-      }
-    })
-    //  有节点移除后
-    this.routerContainer.addEventListener('DOMNodeRemoved', (e: MutationEvent) => {
-      // 判断路由标签是否小于容器的宽度
-      e.cancelBubble = true;      
-      const cWidth = (e.relatedNode as HTMLUListElement).clientWidth;
-      // 设置是否隐藏左右移动的按钮
-      if(cWidth <= this.pWidth && this.routerContainer.classList.contains('xyz-breadcrumb-path-container-scroll')) {
-        this.render.removeClass(this.routerContainer, 'xyz-breadcrumb-path-container-scroll')
-      }
-    })
+    // this.routerContainer.addEventListener('DOMNodeInserted', (e: MutationEvent) => {
+    //   // 判断路由标签是否超出容器的宽度
+    //   e.cancelBubble = true;      
+    //   const cWidth = this.brn.nativeElement.clientWidth;
+    //   // 设置是否显示左右移动的按钮
+    //   if(cWidth > this.pWidth && !this.routerContainer.classList.contains('xyz-breadcrumb-path-container-scroll')) {
+    //     this.render.addClass(this.routerContainer, 'xyz-breadcrumb-path-container-scroll')
+    //   } else if(cWidth > this.pWidth){
+    //     this.toRight(null);
+    //   }
+    // })
+    // //  有节点移除后
+    // this.routerContainer.addEventListener('DOMNodeRemoved', (e: MutationEvent) => {
+    //   // 判断路由标签是否小于容器的宽度
+    //   e.cancelBubble = true;      
+    //   const cWidth = this.brn.nativeElement.clientWidth;
+    //   // 设置是否隐藏左右移动的按钮
+    //   if(cWidth <= this.pWidth && this.routerContainer.classList.contains('xyz-breadcrumb-path-container-scroll')) {
+    //     this.render.removeClass(this.routerContainer, 'xyz-breadcrumb-path-container-scroll')
+    //   } else if(cWidth > this.pWidth || this.currentIndex > 0){
+    //     this.toLeft(null);
+    //   }
+    // })
+  }
 
+  activeRouter(index){
+    this.activeIndex = index;
   }
 }

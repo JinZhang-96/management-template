@@ -6,7 +6,9 @@ import {SharedModule} from '@shared/shared.module';
 
 const routes: Routes = [
   {
-    path: '', component: MenuTableComponent
+    path: '',
+    component: MenuTableComponent,
+    data: {text: '码值管理', url: '/code' }
   }
 ];
 
