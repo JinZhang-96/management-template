@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: '',
     component: MenuTableComponent,
-    data: {text: '码值管理', url: '/code' }
+    data: {text: '菜单管理', url: '/menu' }
   }
 ];
 

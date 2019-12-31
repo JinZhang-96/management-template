@@ -39,7 +39,7 @@ const menus = [
       },
       {
           'text': '用户管理',
-          'link': '/user',
+          'link': '/menu',
           'icon': 'fa fa-user'
       },
       {

@@ -111,6 +111,11 @@ export class BreadcrumbComponent implements OnInit, AfterViewInit {
    * @param e 移除节点
    */
   removeNode(e, i) {
+    // 如果只有一个节点则不删除
+    if(this.breadcSev.rNodes.length === 1 ){
+      return
+    }
+
     this.breadcSev.rNodes.splice(i,1);
     // 判断路由标签是否小于容器的宽度 
     const cWidth = this.brn.nativeElement.clientWidth;
@@ -206,7 +211,8 @@ export class BreadcrumbComponent implements OnInit, AfterViewInit {
     // })
   }
 
-  activeRouter(index){
+  activeRouter(n,index){
+    // this.breadcSev.to(n);
     this.activeIndex = index;
   }
 }

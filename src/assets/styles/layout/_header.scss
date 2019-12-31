@@ -1,3 +1,13 @@
+  // 手机版
+  @media screen and  (max-width: get-screen-size(md))  {
+    .#{$prefix}-header{
+      .#{$prefix}-header-logo{
+        margin-left: -32px !important;
+        width: 100%;
+      }
+    }
+  }
+
 
 .#{$prefix}-header {
   position: fixed;

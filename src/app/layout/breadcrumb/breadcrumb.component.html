@@ -16,7 +16,7 @@
       </span>
       <ul class="xyz-breadcrumb-path-container-nodes" #breadcrumbRouteNodes>
         <li *ngFor="let n of breadcSev.rNodes; let i=index" class="xyz-breadcrumb-path-container-item" #node{{i}}>
-          <span [ngClass]="{'active':i === activeIndex}" (click)="activeRouter(i)" [routerLink]="n?.url">
+          <span [ngClass]="{'active':i === activeIndex}" (click)="activeRouter(n,i)" [routerLink]="n?.url">
             {{n?.text}}
           </span>
           <span (click)="removeNode($event, i)">
@@ -33,7 +33,7 @@
         <i class="fa fa-arrows-alt" aria-hidden="true"></i>
       </div>
     </li>
-    <li (click)="fullScreen()">
+    <li >
       <div class="item">
         <i class="anticon anticon-setting"></i>
       </div>

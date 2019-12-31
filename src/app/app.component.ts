@@ -42,8 +42,10 @@ export class AppComponent implements OnInit{
           map(e => e.data)
         ).subscribe( (e: Observable<any>) =>{
            e && e.subscribe(data =>{
-             const node = new RouterNode(data['text'], data['url']);
-             this.breadcSev.rNodes.push(node);
+             if(data.text && data.url){
+              const node = new RouterNode(data['text'], data['url']);
+              this.breadcSev.push(node);
+             }
            })
         })
   }
