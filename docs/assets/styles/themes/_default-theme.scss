@@ -1,8 +1,27 @@
 @import '../base/variables';
 
+  // 手机版
+@media screen and  (max-width: get-screen-size(md))  {
+  .#{$prefix}-asider{
+    background-color: rgba(0,0,0,0.6) !important;
+    &.close{
+      box-shadow: none !important;
+    }
+    &-inner {
+      background-color: #404040;
+    }
+  }
+}
+
 .#{$prefix}-header {
   background-color: $header-bg;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  .#{$prefix}-header-switch{
+      color: #fff;
+      &:hover{
+        background-color: #0099FF !important;
+      }
+  }
   .item {
     color: #fff !important;
     &:hover {

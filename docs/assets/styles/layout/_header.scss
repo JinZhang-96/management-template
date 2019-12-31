@@ -1,3 +1,13 @@
+  // 手机版
+  @media screen and  (max-width: get-screen-size(md))  {
+    .#{$prefix}-header{
+      .#{$prefix}-header-logo{
+        margin-left: -32px !important;
+        width: 100%;
+      }
+    }
+  }
+
 
 .#{$prefix}-header {
   position: fixed;
@@ -10,9 +20,26 @@
   z-index: $zindex-base + 25;
   height: $header-hg;
 
+  .#{$prefix}-header-switch{
+    // margin-left: -$header-padding;
+    width: $switch-bar-wd;
+    height: $switch-bar-wd;
+    line-height: $switch-bar-wd;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: width .2s $layout-ease;
+    transition: transform .2s $layout-ease;
+    &.#{$prefix}-header-switch-close{
+        transform: rotateZ(180deg);
+        transition: transform .2s $layout-ease;
+    }
+  }
+  
   .#{$prefix}-header-logo {
-    margin-left: -$header-padding;
-    width: $aside-wd;
+    margin-left: $header-padding;
+    width: calc($aside-wd - $switch-bar-wd);
     transition: width .2s $layout-ease;
     a {
       display: block;

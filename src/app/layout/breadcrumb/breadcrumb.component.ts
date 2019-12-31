@@ -21,13 +21,13 @@ export class BreadcrumbComponent implements OnInit, AfterViewInit {
   private routerContainer: HTMLDivElement
 
   // 路由列表的头是否是第一个
-  private isFrist: Boolean = true;
+  isFrist: Boolean = true;
 
   // 路由列表的尾是否是最后一个
-  private isLast: Boolean = false;
+  isLast: Boolean = false;
 
   // 当前移动到第几个路由标签
-  private currentIndex: number = 0;
+  currentIndex: number = 0;
 
   // 放标签的容器的宽度
   private pWidth: number;
