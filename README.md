@@ -23,11 +23,11 @@
 
 # 项目例图
 ## PC
-![pc1](assets/demo/6.png)
-![pc2](assets/demo/5.png)
-![pc3](assets/demo/4.png)
+![pc1](../../blob/master/src/assets/demo/6.png?raw=true)
+![pc2](../../blob/master/src/assets/demo/5.png?raw=true)
+![pc3](../../blob/master/src/assets/demo/4.png?raw=true)
 ## phone
-![pc1](assets/demo/2.png)
-![pc2](assets/demo/1.png)
-![pc3](assets/demo/3.png)
+![ph1](../../blob/master/src/assets/demo/2.png?raw=true)
+![ph2](../../blob/master/src/assets/demo/1.png?raw=true)
+![ph3](../../blob/master/src/assets/demo/3.png?raw=true)
 
