@@ -2,8 +2,8 @@
   @media screen and  (max-width: get-screen-size(md))  {
     .#{$prefix}-header{
       .#{$prefix}-header-logo{
-        margin-left: -32px !important;
-        width: 100%;
+        margin-left: 0 !important;
+        width: calc(100% - 32px);
       }
     }
   }
