@@ -1,10 +1,4 @@
 
-// 手机版
-@media screen and  (max-width: get-screen-size(md))  {
-  .#{$prefix}-content{
-    left: 0 !important;
-  }
-}
 
 .#{$prefix}-content {
   padding: 8px 4px 0px 4px;

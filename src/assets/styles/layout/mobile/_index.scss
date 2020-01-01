@@ -1,0 +1,5 @@
+@media screen and  (max-width: get-screen-size(md))  {
+    @import './header';
+    @import './sidebar';
+    @import './main-content';
+}

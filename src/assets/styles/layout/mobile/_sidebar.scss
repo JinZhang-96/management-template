@@ -1,0 +1,16 @@
+
+// 手机版
+
+    .#{$prefix}-asider{
+      right: 0 ;
+      width: 100% !important;
+      z-index: $zindex-base + 30;
+      &.close {
+        left: -100% !important;
+      }
+      &-inner {
+        width: $aside-wd;
+        margin-right: 0px !important;
+      }
+    }
+  

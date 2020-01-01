@@ -1,0 +1,9 @@
+  // 手机版
+
+    .#{$prefix}-header{
+      .#{$prefix}-header-logo{
+        margin-left: 0 !important;
+        width: calc(100% - 32px);
+      }
+    }
+  
