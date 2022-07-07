@@ -24,7 +24,7 @@
     "@angular/router": "^6.1.0",
     "core-js": "^2.6.11",
     "font-awesome": "^4.7.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "ng-zorro-antd": "^1.8.1",
     "rxjs": "~6.2.0",
     "sweetalert2": "^7.33.1",
